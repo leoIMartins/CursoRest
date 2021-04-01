@@ -3,14 +3,13 @@ package br.ce.limartins.rest;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.containsString;
 
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import io.restassured.http.ContentType;
 
 public class EnvioDadosTeste {
 
-	/*@Test
+	@Test
 	public void deveEnviarValorViaQuery() {
 		given()
 			.log().all()
@@ -37,7 +36,7 @@ public class EnvioDadosTeste {
 			.contentType(ContentType.XML)
 			.contentType(containsString("utf-8"))
 		;
-	}*/
+	}
 	
 	@Test
 	public void deveEnviarValorViaHeader() {
