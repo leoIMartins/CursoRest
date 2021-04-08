@@ -3,9 +3,10 @@ package br.ce.limartins.rest;
 import static io.restassured.RestAssured.given;
 
 import org.junit.Test;
+import org.xml.sax.SAXParseException;
 
 import io.restassured.matcher.RestAssuredMatchers;
-import org.xml.sax.SAXParseException;
+import io.restassured.module.jsv.JsonSchemaValidator;
 
 
 public class SchemaTest {
@@ -33,6 +34,19 @@ public class SchemaTest {
 			.log().all()
 			.statusCode(200)
 			.body(RestAssuredMatchers.matchesXsdInClasspath("users.xsd"))
+		;
+	}
+	
+	@Test
+	public void deveValidarSchemaJson () {
+		given()
+			.log().all()
+		.when()
+			.get("http://restapi.wcaquino.me/users")
+		.then()
+			.log().all()
+			.statusCode(200)
+			.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("users.json"))
 		;
 	}
 }
