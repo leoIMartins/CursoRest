@@ -1,0 +1,5 @@
+package br.li.martins.rest.core;
+
+public class BaseTest implements Constantes {
+
+}

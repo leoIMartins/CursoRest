@@ -1,0 +1,6 @@
+package br.li.martins.rest.core;
+
+public interface Constantes {
+
+	String APP_BASE_URL = "http://barrigarest.wcaquino.me";
+}

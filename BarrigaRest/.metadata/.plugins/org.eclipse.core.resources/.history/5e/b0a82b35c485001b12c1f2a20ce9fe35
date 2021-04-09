@@ -1,0 +1,5 @@
+package br.ce.limartins.rest;
+
+public class OlaMundoTest {
+
+}
